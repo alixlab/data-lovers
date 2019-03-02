@@ -8,29 +8,20 @@ body {
 
 header {
     background-color: rgb(150, 159, 175);
-    padding: 1.5%;
+    padding-left: 1%;
     line-height: 1.5em;
     font-weight: 700;
+    height: 5%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 img {
-    max-width: 150px;
+    max-width: 100px;
     width: auto;
-    max-height: 150px;
+    max-height: 100px;
     height: auto;
-}
-
-.list-banner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    margin: auto;
-}
-
-.list-banner-item {
-    align-items: left;
-    list-style-type: none;    
 }
 
 main {
@@ -39,6 +30,15 @@ main {
     width: 69%;
     padding: 3%;
 } 
+
+.container {
+    display: flex;
+    justify-content: space-around;
+}
+
+ul{
+    list-style-type: none;
+}
 
 aside {
     background-color: lightgray;
@@ -67,4 +67,5 @@ footer {
     color: white;
     text-align: center;
     padding: 2%;
+    float: inline-end;
 }
