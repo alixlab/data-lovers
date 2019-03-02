@@ -5,20 +5,22 @@
   <meta charset="utf-8">
   <title>Data Lovers</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet">
 </head>
 
 <body>
   <header>
     <nav class="nav-items">
-      <div>
-        <img class="logo" src="" alt="logo">
-        <h1 class="heading-banner">Mobilidade Urbana e Segurança</h1>
-        <ul class="list-banner">
-          <li class="list-banner-item">Home</li>
-          <li class="list-banner-item">Sobre</li>
-          <li class="list-banner-item">Estatísticas</li>
-        </ul>
-      </div>
+      <figure class="list-banner">
+        <img class="logo" src="logo.jpeg" alt="logo">
+      </figure>
+      <h1 class="heading-banner">Mobilidade Urbana e Segurança</h1>
+      <ul class="list-banner">
+        <li class="list-banner-item"><a href="">Home</a></li> &emsp;
+        <li class="list-banner-item"><a href="">Sobre</a></li> &emsp;
+        <li class="list-banner-item"><a href="">Estatísticas</a></li> &emsp;
+        <li class="list-banner-item"><a href="">Links</a></li> &emsp;
+      </ul>
     </nav>
   </header>
   <main>
@@ -39,22 +41,54 @@
       <div id="tables-div">
         <h1>Pessoas feridas em meios de transporte nos EUA</h1>
         <table>
-          
+
         </table>
       </div>
     </section>
-    <aside>
-      <select name="year" id="yearFilter">
-      </select>
-      <select name="category" id="categoryFilter">
-        <option value="pedestrians">Pedestres</option>
-        <option value="pedalcyclists">Ciclistas</option>
-        <option value="motorcyclists">Motociclistas</option>
-        <option value="car">Carros</option>
-        <option value="bus">Ônibus</option>
-      </select>
-    </aside>
   </main>
+  <aside>
+    Ano inicial:
+    <select id="yearFilterBegin" required>
+      <option value="y2006" selected>2006</option>
+      <option value="y2007">2007</option>
+      <option value="y2008">2008</option>
+      <option value="y2009">2009</option>
+      <option value="y2010">2010</option>
+      <option value="y2011">2011</option>
+      <option value="y2012">2012</option>
+      <option value="y2013">2013</option>
+      <option value="y2014">2014</option>
+      <option value="y2015">2015</option>
+    </select> &nbsp;
+    Ano final:
+    <select id="yearFilterEnd" required>
+      <option value="y2006">2006</option>
+      <option value="y2007">2007</option>
+      <option value="y2008">2008</option>
+      <option value="y2009">2009</option>
+      <option value="y2010">2010</option>
+      <option value="y2011">2011</option>
+      <option value="y2012">2012</option>
+      <option value="y2013">2013</option>
+      <option value="y2014">2014</option>
+      <option value="y2015" selected>2015</option>
+    </select>
+
+    <form action="checkboxCategory">Categoria:<br>
+      <input type="checkbox" value="p-CheckBox" class="categ-checkbox">Pedestres<br>
+      <input type="checkbox" value="cy-CheckBox" class="categ-checkbox">Ciclistas<br>
+      <input type="checkbox" value="m-CheckBox" class="categ-checkbox">Motociclistas<br>
+      <input type="checkbox" value="car-CheckBox" class="categ-checkbox">Carros<br>
+      <input type="checkbox" value="o-CheckBox" class="categ-checkbox">Ônibus<br>
+    </form>
+    Ordenar:
+    <select name="order" id="orderList">
+      <option value="yearBegin">Ano (crescente)</option>
+      <option value="yearEnd">Ano (decrescente)</option>
+    </select>
+    <br>
+    <button id="btnSelect">Filtrar</button>
+  </aside>
   <footer class="footer">
     <ul class="footer-list">
       <li class="footer-list-item">Contato</li>
