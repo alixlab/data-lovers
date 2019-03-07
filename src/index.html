@@ -46,9 +46,6 @@
     <section class="tables">
       <div id="tables-div">
         <h1>Pessoas feridas em meios de transporte nos EUA</h1>
-        <table>
-
-        </table>
       </div>
     </section>
     <section>
@@ -66,42 +63,42 @@
   </main>
   <aside>
     Ano inicial:
-    <select id="yearFilterBegin" required>
-      <option value="y2006" selected>2006</option>
-      <option value="y2007">2007</option>
-      <option value="y2008">2008</option>
-      <option value="y2009">2009</option>
-      <option value="y2010">2010</option>
-      <option value="y2011">2011</option>
-      <option value="y2012">2012</option>
-      <option value="y2013">2013</option>
-      <option value="y2014">2014</option>
-      <option value="y2015">2015</option>
+    <select id="yearFilterBegin">
+      <option value="2006" selected>2006</option>
+      <option value="2007">2007</option>
+      <option value="2008">2008</option>
+      <option value="2009">2009</option>
+      <option value="2010">2010</option>
+      <option value="2011">2011</option>
+      <option value="2012">2012</option>
+      <option value="2013">2013</option>
+      <option value="2014">2014</option>
+      <option value="2015">2015</option>
     </select> &nbsp;
     Ano final:
-    <select id="yearFilterEnd" required>
-      <option value="y2006">2006</option>
-      <option value="y2007">2007</option>
-      <option value="y2008">2008</option>
-      <option value="y2009">2009</option>
-      <option value="y2010">2010</option>
-      <option value="y2011">2011</option>
-      <option value="y2012">2012</option>
-      <option value="y2013">2013</option>
-      <option value="y2014">2014</option>
-      <option value="y2015" selected>2015</option>
-    </select>
-
-    <form action="checkboxCategory">Categoria:<br>
-      <input type="checkbox" value="p-CheckBox" class="categ-checkbox">Pedestres<br>
-      <input type="checkbox" value="cy-CheckBox" class="categ-checkbox">Ciclistas<br>
-      <input type="checkbox" value="m-CheckBox" class="categ-checkbox">Motociclistas<br>
-      <input type="checkbox" value="car-CheckBox" class="categ-checkbox">Carros<br>
-      <input type="checkbox" value="o-CheckBox" class="categ-checkbox">Ônibus<br>
-    </form>
+    <select id="yearFilterEnd">
+      <option value="2006">2006</option>
+      <option value="2007">2007</option>
+      <option value="2008">2008</option>
+      <option value="2009">2009</option>
+      <option value="2010">2010</option>
+      <option value="2011">2011</option>
+      <option value="2012">2012</option>
+      <option value="2013">2013</option>
+      <option value="2014">2014</option>
+      <option value="2015" selected>2015</option>
+    </select><br>
+    Categoria:
+    <select id="category">
+      <option value="Total_Injured_Persons_Pedestrians" selected>Pedestres</option>
+      <option value="Total_Injured_Persons_Pedalcyclists">Ciclistas</option>
+      <option value="Total_Injured_Persons_Motorcyclists">Motociclistas</option>
+      <option value="Total_Injured_Persons_Passenger_Car_Occupants">Carros</option>
+      <option value="Total_Injured_Persons_Bus_Occupants">Ônibus</option>
+    </select><br>
     Ordenar:
     <select name="order" id="orderList">
-      <option value="yearBegin">Ano (crescente)</option>
+      <option value="yearBegin" selected>Ano (crescente)</option>
       <option value="yearEnd">Ano (decrescente)</option>
     </select>
     <br>
