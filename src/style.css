@@ -25,11 +25,28 @@ img {
 }
 
 main {
-    background-color: rgb(228, 230, 248);
     float: right;
-    width: 69%;
+    width: 65%;
     padding: 3%;
 } 
+
+#about {
+    background-color: rgb(206, 208, 224);
+    padding: 2%;
+    margin: 2%;
+}
+
+#tables {
+    background-color: rgb(206, 208, 224);
+    padding: 2%;
+    margin: 2%;
+}
+ 
+#links {
+    background-color: rgb(206, 208, 224);
+    padding: 2%;
+    margin: 2%;
+}
 
 .container {
     display: flex;
@@ -40,18 +57,29 @@ ul{
     list-style-type: none;
 }
 
-aside {
-    background-color: lightgray;
-    float: left;
-    width: 22%;
-    padding: 1.5%;
-    line-height: 1.8em;
-    font-weight: 700;
-    font-size: 18px;
+.header-main li:hover {
+    background-color: yellow;
 }
 
-.categ-checkbox {
-    font-weight: 400 !important;
+footer {
+    background-color: rgb(61, 60, 60);
+    color: white;
+    text-align: center;
+    width: 100%;
+    padding: 2%;
+    padding-bottom: 0;
+    margin: auto;
+}
+
+aside {
+    background-color: rgb(206, 208, 224);
+    float: left;
+    width: 22%;
+    padding: 2%;
+    line-height: 1.8em;
+    font-weight: 700;
+    font-size: 20px;
+    margin: 1.5%;
 }
 
 #btnSelect {
@@ -60,12 +88,4 @@ aside {
     border-radius: 20px;
     border: none;
     font-size: 15px;
-}
-
-footer {
-    background-color: rgb(61, 60, 60);
-    color: white;
-    text-align: center;
-    padding: 2%;
-    float: inline-end;
 }

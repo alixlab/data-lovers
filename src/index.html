@@ -22,12 +22,12 @@
   <main>
     <section class="header-main">
       <ul class="container">
-        <li class="item1"><a>SOBRE</a></li>
-        <li class="item2"><a>ESTATÍSTICAS</a></li>
-        <li class="item3"><a>LINKS</a></li>
+        <li class="item1"><a href="#about">SOBRE</a></li>
+        <li class="item2"><a href="#tables">ESTATÍSTICAS</a></li>
+        <li class="item3"><a href="#links">LINKS</a></li>
       </ul>
     </section>
-    <section class="about">
+    <section id="about">
       <h1>Sobre</h1>
       <p>Mobilidade é a capacidade das pessoas se deslocarem para diferentes lugares e, assim, realizarem atividades
         do
@@ -43,12 +43,13 @@
       <p>Em 2011, as Nações Unidas proclamaram a Década de Ação pela Segurança no Trânsito 2011-2020, na qual governos
         de todo o mundo se comprometem a tomar novas medidas para prevenir os acidentes de trânsito.</p>
     </section>
-    <section class="tables">
+    <section id="tables">
       <div id="tables-div">
         <h1>Pessoas feridas em meios de transporte nos EUA</h1>
       </div>
+      <small>Dados extraídos de John Snow Labs.</small>
     </section>
-    <section>
+    <section id="links">
       <h1>Links</h1>
       <ul>
         <li><a href="https://bikeelegal.com/" target="blank">Bike é Legal</a></li>
@@ -74,7 +75,7 @@
       <option value="2013">2013</option>
       <option value="2014">2014</option>
       <option value="2015">2015</option>
-    </select> &nbsp;
+    </select><br>
     Ano final:
     <select id="yearFilterEnd">
       <option value="2006">2006</option>
@@ -98,18 +99,12 @@
     </select><br>
     Ordenar:
     <select name="order" id="orderList">
-      <option value="yearBegin" selected>Ano (crescente)</option>
-      <option value="yearEnd">Ano (decrescente)</option>
+      <option value="asc" selected>Ano (crescente)</option>
+      <option value="desc">Ano (decrescente)</option>
     </select>
     <br>
     <button id="btnSelect">Filtrar</button>
   </aside>
-  <footer class="footer">
-    <ul class="footer-list">
-      <li class="footer-list-item">Contato</li>
-    </ul>
-  </footer>
-
 
   <script src="./data/injuries/injuries.js"></script>
   <script src="main.js"></script>
