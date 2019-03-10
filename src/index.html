@@ -2,112 +2,148 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <title>Data Lovers</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet">
+    <meta charset="utf-8">
+    <title>Data Lovers</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
 </head>
 
 <body>
-  <header>
-    <section class="item1">
-      <figure>
-        <img class="logo" src="logo.png" alt="logo">
-      </figure>
-    </section>
-    <section class="item2">
-      <h1>Mobilidade Urbana e Segurança</h1>
-    </section>
-  </header>
-  <main>
-    <section class="header-main">
-      <ul class="container">
-        <li class="item1"><a href="#about">SOBRE</a></li>
-        <li class="item2"><a href="#tables">ESTATÍSTICAS</a></li>
-        <li class="item3"><a href="#links">LINKS</a></li>
-      </ul>
-    </section>
-    <section id="about">
-      <h1>Sobre</h1>
-      <p>Mobilidade é a capacidade das pessoas se deslocarem para diferentes lugares e, assim, realizarem atividades
-        do
-        seu cotidiano, como trabalho, educação, lazer. As cidades devem cumprir sua função social e ajudar na
-        mobilidade, limitando o número de veículos motorizados, que geram consequências negativas para a população e o
-        meio ambiente, valorizando um transporte sustentável.</p>
-      <p>De acordo com o relatório da Organização Mundial da Saúde (OMS), <em>Managing Speed</em>, de 2017, todos os
-        anos morrem 1,25 milhões de pessoas nas vias de tráfego do mundo. É a principal causa de morte entre jovens de
-        15 a 29 anos de idades. As consequências dos acidentes também se convertem em um problema importante para o
-        desenvolvimento, pois esses acidentes custam aos países aproximadamente 3% de seu PIB, elevando esse número a
-        5%
-        em países de baixo e médio rendimento.</p>
-      <p>Em 2011, as Nações Unidas proclamaram a Década de Ação pela Segurança no Trânsito 2011-2020, na qual governos
-        de todo o mundo se comprometem a tomar novas medidas para prevenir os acidentes de trânsito.</p>
-    </section>
-    <section id="tables">
-      <div id="tables-div">
-        <h1>Pessoas feridas em meios de transporte nos EUA</h1>
-      </div>
-      <small>Dados extraídos de John Snow Labs.</small>
-    </section>
-    <section id="links">
-      <h1>Links</h1>
-      <ul>
-        <li><a href="https://bikeelegal.com/" target="blank">Bike é Legal</a></li>
-        <li><a href="https://bikeanjas.wordpress.com/" target="blank">Bike Anjas</a></li>
-        <li><a href="http://vadebike.org/" target="blank">Vá de bike</a></li>
-        <li><a href="https://www.mobilize.org.br/" target="blank">Mobilize</a></li>
-        <li><a href="https://mobilidadesampa.com.br/" target="blank">Mobilidade Sampa</a></li>
-        <li><a href="http://www.antp.org.br/" target="blank">Associação Nacional de Transporte Público</a></li>
-        <li><a href="http://www.pedestre.org.br/" target="blank">Associação Brasileira de Pedestres</a></li>
-      </ul>
-    </section>
-  </main>
-  <aside>
-    Ano inicial:
-    <select id="yearFilterBegin">
-      <option value="2006" selected>2006</option>
-      <option value="2007">2007</option>
-      <option value="2008">2008</option>
-      <option value="2009">2009</option>
-      <option value="2010">2010</option>
-      <option value="2011">2011</option>
-      <option value="2012">2012</option>
-      <option value="2013">2013</option>
-      <option value="2014">2014</option>
-      <option value="2015">2015</option>
-    </select><br>
-    Ano final:
-    <select id="yearFilterEnd">
-      <option value="2006">2006</option>
-      <option value="2007">2007</option>
-      <option value="2008">2008</option>
-      <option value="2009">2009</option>
-      <option value="2010">2010</option>
-      <option value="2011">2011</option>
-      <option value="2012">2012</option>
-      <option value="2013">2013</option>
-      <option value="2014">2014</option>
-      <option value="2015" selected>2015</option>
-    </select><br>
-    Categoria:
-    <select id="category">
-      <option value="Total_Injured_Persons_Pedestrians" selected>Pedestres</option>
-      <option value="Total_Injured_Persons_Pedalcyclists">Ciclistas</option>
-      <option value="Total_Injured_Persons_Motorcyclists">Motociclistas</option>
-      <option value="Total_Injured_Persons_Passenger_Car_Occupants">Carros</option>
-      <option value="Total_Injured_Persons_Bus_Occupants">Ônibus</option>
-    </select><br>
-    Ordenar:
-    <select name="order" id="orderList">
-      <option value="asc" selected>Ano (crescente)</option>
-      <option value="desc">Ano (decrescente)</option>
-    </select>
-    <br>
-    <button id="btnSelect">Filtrar</button>
-  </aside>
+    <header>
+        <section class="item1">
+            <figure>
+                <img class="logo" src="logo.png" alt="logo">
+            </figure>
+        </section>
+        <section class="item2">
+            <h1>Mobilidade Urbana e Segurança</h1>
+        </section>
+    </header>
+    <main>
+        <section class="header-main">
+            <ul class="container">
+                <li class="item1"><a href="#about">SOBRE</a></li>
+                <li class="item2"><a href="#tables">ESTATÍSTICAS</a></li>
+                <li class="item3"><a href="#links">LINKS</a></li>
+            </ul>
+        </section>
+        <section id="about">
+            <h1>Sobre</h1>
+            <p>Mobilidade é a capacidade das pessoas se deslocarem para diferentes lugares e, assim, realizarem
+                atividades
+                do
+                seu cotidiano, como trabalho, educação, lazer. As cidades devem cumprir sua função social e ajudar na
+                mobilidade, limitando o número de veículos motorizados, que geram consequências negativas para a
+                população e o
+                meio ambiente, valorizando um transporte sustentável.</p>
+            <p>De acordo com o relatório da Organização Mundial da Saúde (OMS), <em>Managing Speed</em>, de 2017, todos
+                os
+                anos morrem 1,25 milhões de pessoas nas vias de tráfego do mundo. É a principal causa de morte entre
+                jovens de
+                15 a 29 anos de idades. As consequências dos acidentes também se convertem em um problema importante
+                para o
+                desenvolvimento, pois esses acidentes custam aos países aproximadamente 3% de seu PIB, elevando esse
+                número a
+                5%
+                em países de baixo e médio rendimento.</p>
+            <p>Em 2011, as Nações Unidas proclamaram a Década de Ação pela Segurança no Trânsito 2011-2020, na qual
+                governos
+                de todo o mundo se comprometem a tomar novas medidas para prevenir os acidentes de trânsito.</p>
+        </section>
+        <section id="tables">
+            <h1>Pessoas feridas em meios de transporte nos EUA</h1>
+            <div id="charts">
+                <div id="allDataBus"></div>
+                <div id="allDataMoto"></div>
+                <div id="allDataCar"></div>
+                <div id="allDataBike"></div>
+                <div id="allDataPedestrian"></div>
+            </div>
+            <div id="tables-div">
+            </div>
+            <small>Dados extraídos de John Snow Labs.</small>
+        </section>
+        <section id="links">
+            <h1>Links</h1>
+            <ul>
+                <li><a href="https://bikeelegal.com/" target="blank">Bike é Legal</a></li>
+                <li><a href="https://bikeanjas.wordpress.com/" target="blank">Bike Anjas</a></li>
+                <li><a href="http://vadebike.org/" target="blank">Vá de bike</a></li>
+                <li><a href="https://www.mobilize.org.br/" target="blank">Mobilize</a></li>
+                <li><a href="https://mobilidadesampa.com.br/" target="blank">Mobilidade Sampa</a></li>
+                <li><a href="http://www.antp.org.br/" target="blank">Associação Nacional de Transporte Público</a></li>
+                <li><a href="http://www.pedestre.org.br/" target="blank">Associação Brasileira de Pedestres</a></li>
+            </ul>
+        </section>
+    </main>
+    <aside>
+        Ano inicial:
+        <select id="yearFilterBegin">
+            <option value="1996" selected>1996</option>
+            <option value="1997">1997</option>
+            <option value="1998">1998</option>
+            <option value="1999">1999</option>
+            <option value="2000">2000</option>
+            <option value="2001">2001</option>
+            <option value="2002">2002</option>
+            <option value="2003">2003</option>
+            <option value="2004">2004</option>
+            <option value="2005">2005</option>
+            <option value="2006">2006</option>
+            <option value="2007">2007</option>
+            <option value="2008">2008</option>
+            <option value="2009">2009</option>
+            <option value="2010">2010</option>
+            <option value="2011">2011</option>
+            <option value="2012">2012</option>
+            <option value="2013">2013</option>
+            <option value="2014">2014</option>
+            <option value="2015">2015</option>
+        </select><br>
+        Ano final:
+        <select id="yearFilterEnd">
+            <option value="1996">1996</option>
+            <option value="1997">1997</option>
+            <option value="1998">1998</option>
+            <option value="1999">1999</option>
+            <option value="2000">2000</option>
+            <option value="2001">2001</option>
+            <option value="2002">2002</option>
+            <option value="2003">2003</option>
+            <option value="2004">2004</option>
+            <option value="2005">2005</option>
+            <option value="2006">2006</option>
+            <option value="2007">2007</option>
+            <option value="2008">2008</option>
+            <option value="2009">2009</option>
+            <option value="2010">2010</option>
+            <option value="2011">2011</option>
+            <option value="2012">2012</option>
+            <option value="2013">2013</option>
+            <option value="2014">2014</option>
+            <option value="2015" selected>2015</option>
+        </select><br>
+        Categoria:
+        <select id="category">
+            <option value="Total_Injured_Persons_Pedestrians" selected>Pedestres</option>
+            <option value="Total_Injured_Persons_Pedalcyclists">Ciclistas</option>
+            <option value="Total_Injured_Persons_Motorcyclists">Motociclistas</option>
+            <option value="Total_Injured_Persons_Passenger_Car_Occupants">Carros</option>
+            <option value="Total_Injured_Persons_Bus_Occupants">Ônibus</option>
+        </select><br>
+        Ordenar:
+        <select name="order" id="orderList">
+            <option value="asc" selected>Ano (crescente)</option>
+            <option value="desc">Ano (decrescente)</option>
+        </select>
+        <br>
+        <button id="btnSelect">Filtrar</button>
+    </aside>
 
-  <script src="./data/injuries/injuries.js"></script>
-  <script src="main.js"></script>
+    <script src="./data/injuries/injuries.js"></script>
+    <script src="main.js"></script>
 </body>
 
 </html>
