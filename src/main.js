@@ -73,6 +73,7 @@ function filterData() {
   let dataset = getData(start, end, category);
   sortByYear(dataset, order);
   tableCreate(dataset);
+  google.charts.setOnLoadCallback(function() { drawHomeChart(dataset); });
 }
 
 function removeTable() {
@@ -83,23 +84,23 @@ function removeTable() {
 google.charts.load('current', { 'packages': ['corechart'] });
 
 function drawHomeChart(dataset) {
-  let tmpData = [[dataset[0][0], "Acidentes por ano"]];
+  let tmpData = [["", "Acidentes: "]];
   for (row of dataset.slice(1)) {
-    tmpData.push([row[0], row[1]])
+    tmpData.push([row[0], parseInt(row[1].replace(".", ""))]);
   }
   console.log(tmpData)
   let data = google.visualization.arrayToDataTable(tmpData);
   let options = {
-    title: 'Pessoas Envolvidas em Acidentes de ' + dataset[0][1],
+    title: 'Tipo de acidente: ' + dataset[0][1],
     curveType: 'function',
     legend: 'none',
-    width: 200,
-    height: 200,
+    width: 800,
+    height: 400,
     backgroundColor: 'transparent'
   };
   console.log(options)
-  var chart = new google.visualization.LineChart(document.getElementById('id01'));
+  var chart = new google.visualization.LineChart(document.getElementById('allDataBus'));
   chart.draw(data, options);
 }
 
-google.charts.setOnLoadCallback(drawHomeChart(dataset));
+google.charts.setOnLoadCallback(function() { drawHomeChart(dataset); });
