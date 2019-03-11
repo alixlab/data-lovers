@@ -51,13 +51,17 @@ function tableCreate(dataset) {
 }
 
 function sortByYear(array, order) {
-  array.sort(function (a, b) {
+  let header = [array[0]];
+  let data = array.slice(1)
+
+  data.sort(function (a, b) {
     if (order === 'asc') {
       return a[0] > b[0] ? 1 : -1;
     } else {
       return a[0] < b[0] ? 1 : -1;
     }
   });
+  return header.concat(data);
 }
 
 function filterData() {
@@ -71,9 +75,9 @@ function filterData() {
   let orderSelect = document.getElementById("orderList");
   let order = orderSelect.options[orderSelect.selectedIndex].value;
   let dataset = getData(start, end, category);
-  sortByYear(dataset, order);
+  dataset = sortByYear(dataset, order);
   tableCreate(dataset);
-  google.charts.setOnLoadCallback(function() { drawHomeChart(dataset); });
+  google.charts.setOnLoadCallback(function () { drawHomeChart(dataset); });
 }
 
 function removeTable() {
@@ -88,7 +92,6 @@ function drawHomeChart(dataset) {
   for (row of dataset.slice(1)) {
     tmpData.push([row[0], parseInt(row[1].replace(".", ""))]);
   }
-  console.log(tmpData)
   let data = google.visualization.arrayToDataTable(tmpData);
   let options = {
     title: 'Tipo de acidente: ' + dataset[0][1],
@@ -98,9 +101,8 @@ function drawHomeChart(dataset) {
     height: 400,
     backgroundColor: 'transparent'
   };
-  console.log(options)
   var chart = new google.visualization.LineChart(document.getElementById('allDataBus'));
   chart.draw(data, options);
 }
 
-google.charts.setOnLoadCallback(function() { drawHomeChart(dataset); });
+google.charts.setOnLoadCallback(function () { drawHomeChart(dataset); });
