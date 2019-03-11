@@ -1,3 +1,9 @@
+let btnFilter = document.getElementById("btnSelect");
+btnFilter.addEventListener("click", filterData);
+let dataset = getData(1996, 2015, 'Total_Injured_Persons_Pedestrians');
+sortByYear(dataset, 'asc');
+tableCreate(dataset);
+
 function getData(start, end, category) {
   const dict = {
     "Total_Injured_Persons_Pedestrians": "Pedestres",
@@ -54,9 +60,25 @@ function sortByYear(array, order) {
   });
 }
 
-let dataset = getData(1996, 2015, "Total_Injured_Persons_Pedestrians");
-sortByYear(dataset, 'asc');
-tableCreate(dataset);
+function filterData() {
+  removeTable();
+  let startSelect = document.getElementById("yearFilterBegin");
+  let start = parseInt(startSelect.options[startSelect.selectedIndex].value);
+  let endSelect = document.getElementById("yearFilterEnd");
+  let end = parseInt(endSelect.options[endSelect.selectedIndex].value);
+  let categorySelect = document.getElementById("category");
+  let category = categorySelect.options[categorySelect.selectedIndex].value;
+  let orderSelect = document.getElementById("orderList");
+  let order = orderSelect.options[orderSelect.selectedIndex].value;
+  let dataset = getData(start, end, category);
+  sortByYear(dataset, order);
+  tableCreate(dataset);
+}
+
+function removeTable() {
+  let table = document.getElementById("table");
+  table.parentNode.removeChild(table);
+}
 
 google.charts.load('current', { 'packages': ['corechart'] });
 
