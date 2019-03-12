@@ -3,6 +3,7 @@ btnFilter.addEventListener("click", filterData);
 let dataset = getData(1996, 2015, 'Total_Injured_Persons_Pedestrians');
 sortByYear(dataset, 'asc');
 tableCreate(dataset);
+medianText(dataset);
 
 function getData(start, end, category) {
   const dict = {
@@ -20,9 +21,9 @@ function getData(start, end, category) {
       let record = [];
       record.push(year);
       if (obj[category] !== null) {
-        record.push(obj[category].toLocaleString("pt-BR"));
+        record.push(obj[category]);
       } else {
-        record.push("Não disponível");
+        record.push(0);
       }
       dataset.push(record);
     }
@@ -39,9 +40,9 @@ function tableCreate(dataset) {
   let tbdy = document.createElement('tbody');
   for (row of dataset) {
     let tr = document.createElement('tr');
-    for (column of row) {
+    for (idx in row) {
       let td = document.createElement('td');
-      td.appendChild(document.createTextNode(column))
+      td.appendChild(document.createTextNode(idx == 1 ? row[idx].toLocaleString("pt-BR") : row[idx]))
       tr.appendChild(td)
     }
     tbdy.appendChild(tr);
@@ -66,6 +67,7 @@ function sortByYear(array, order) {
 
 function filterData() {
   removeTable();
+  removeMedian();
   let startSelect = document.getElementById("yearFilterBegin");
   let start = parseInt(startSelect.options[startSelect.selectedIndex].value);
   let endSelect = document.getElementById("yearFilterEnd");
@@ -76,8 +78,28 @@ function filterData() {
   let order = orderSelect.options[orderSelect.selectedIndex].value;
   let dataset = getData(start, end, category);
   dataset = sortByYear(dataset, order);
+  medianText(dataset);
   tableCreate(dataset);
   google.charts.setOnLoadCallback(function () { drawHomeChart(dataset); });
+}
+
+function medianCalc(dataset) {
+  let median = dataset.slice(1).reduce(function (r, a) {
+    a.forEach(function (b, i) {
+      r[i] = (r[i] || 0) + b;
+    });
+    return r;
+  }, []);
+  return parseInt(median[1] / (dataset.length - 1));
+}
+
+function medianText(dataset) {
+  let result = document.createElement('h3');
+  result.setAttribute("id", "medianText");
+  let median = document.getElementById("median");
+
+  result.textContent = "Média anual de " + dataset[0][1] + ": " + medianCalc(dataset).toLocaleString("pt-BR");
+  median.appendChild(result);
 }
 
 function removeTable() {
@@ -85,12 +107,17 @@ function removeTable() {
   table.parentNode.removeChild(table);
 }
 
+function removeMedian() {
+  let median = document.getElementById("medianText");
+  median.parentNode.removeChild(median);
+}
+
 google.charts.load('current', { 'packages': ['corechart'] });
 
 function drawHomeChart(dataset) {
   let tmpData = [["", "Acidentes: "]];
   for (row of dataset.slice(1)) {
-    tmpData.push([row[0], parseInt(row[1].replace(".", ""))]);
+    tmpData.push([row[0], (row[1])])
   }
   let data = google.visualization.arrayToDataTable(tmpData);
   let options = {
