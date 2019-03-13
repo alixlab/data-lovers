@@ -81,6 +81,7 @@ function filterData() {
   medianText(dataset);
   tableCreate(dataset);
   google.charts.setOnLoadCallback(function () { drawHomeChart(dataset); });
+  window.location.href = href="#tables";
 }
 
 function medianCalc(dataset) {
@@ -124,10 +125,14 @@ function drawHomeChart(dataset) {
     title: 'Tipo de acidente: ' + dataset[0][1],
     curveType: 'function',
     legend: 'none',
-    width: 800,
+    width: 1150,
     height: 400,
-    backgroundColor: 'transparent'
+    vAxis: {format: 'short'},
+    hAxis: {format: '0',
+    gridlines: {color: 'transparent'}},
+    backgroundColor: 'transparent',
   };
+
   var chart = new google.visualization.LineChart(document.getElementById('allDataBus'));
   chart.draw(data, options);
 }
