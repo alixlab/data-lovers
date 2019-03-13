@@ -12,8 +12,8 @@ Com base nos perfis, foi pensado em um site, que pertenceria a uma Organização
 
 Foi criado um protótipo (https://marvelapp.com/gehib69) e pedido aos usuários que completassem as seguintes tarefas:
 - Em filtrar, escolher um ano;
--Depois escolher uma categoria;
--Clicar no botão para filtrar os dados e gerar o gráfico.
+- Depois escolher uma categoria;
+- Clicar no botão para filtrar os dados e gerar o gráfico.
 De acordo com os usuários que o avaliaram, foi considerado bem informativo, de fácil navegação, aparência séria, mas as fotos do Home estavam muito escuras. Um usuário sugeriu que o filtro por ano compreendesse dois campos: um com ano inicial e outro final, para poder fazer uma comparação ao longo dos anos.
 Foi optado por manter a aparência do protótipo, devido às avaliações positivas, e aceitar a proposta do filtro. Foi criado um logo, um círculo amarelo, que remete ao Movimento Maio Amarelo, cuja proposta é "chamar a atenção da sociedade para o alto índice de mortes e feridos no trânsito em todo o mundo", com a sigla do produto.
 
