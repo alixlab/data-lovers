@@ -1,91 +1,133 @@
+option, p, td, th{
+    font-family: 'Carme', sans-serif;
+}
+
+table{
+    border: 0px solid;
+}
+
+td{
+    border: 1.3px solid black;
+}
+
+.options-names, #median{
+    font-family: 'Carme', sans-serif;
+}
+
+aside h2{
+    margin: 1%;
+}
+
+#btnSelect{
+    background-color: white;
+    border: 3px solid #175187;
+}
+
+#btnSelect:hover{
+    background-color: #175187
+}
+
+html{
+    background-color: #92BBFF;
+}
+
 body {
-    font-family: 'Asap', sans-serif;
-    color: rgb(61, 60, 60);
-    background-color: rgb(237, 243, 252);
-    margin: auto;
-    text-align: left;
+    background-color: #FFFfffff;
+    margin: 6%;
+    box-shadow: 3px 3px 48px black;
+    border: 2px solid #175187;
+    border-radius: 3%;
 }
 
-header {
-    background-color: rgb(150, 159, 175);
-    padding-left: 1%;
-    line-height: 1.5em;
-    font-weight: 700;
-    height: 5%;
+header, main{
+    padding: 2%;
+}
+
+header  {
     display: flex;
-    justify-content: flex-start;
+    padding-right: 10%;
+    padding-left: 10%;
     align-items: center;
-}
-
-img {
-    max-width: 100px;
-    width: auto;
-    max-height: 100px;
-    height: auto;
-}
-
-main {
-    float: right;
-    width: 65%;
-    padding: 3%;
-} 
-
-#about {
-    background-color: rgb(206, 208, 224);
-    padding: 2%;
-    margin: 2%;
-}
-
-#tables {
-    background-color: rgb(206, 208, 224);
-    padding: 2%;
-    margin: 2%;
-}
- 
-#links {
-    background-color: rgb(206, 208, 224);
-    padding: 2%;
-    margin: 2%;
-}
-
-.container {
-    display: flex;
+    border-bottom: 3px solid #175187;
+    border-bottom-left-radius: 42%;
+    border-bottom-right-radius: 42%;
     justify-content: space-around;
 }
 
-ul{
+.logo {
+    height: 8ch;
+}
+
+header h1 {
+    width: max-content;
+    font-family: 'Fredoka One', cursive;
+    font-size: 180%;
+}
+
+.header-main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container{
+    display: flex;
     list-style-type: none;
-}
-
-.header-main li:hover {
-    background-color: yellow;
-}
-
-footer {
-    background-color: rgb(61, 60, 60);
-    color: white;
-    text-align: center;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
     width: 100%;
-    padding: 2%;
-    padding-bottom: 0;
-    margin: auto;
 }
 
-aside {
-    background-color: rgb(206, 208, 224);
-    float: left;
-    width: 22%;
-    padding: 2%;
-    line-height: 1.8em;
-    font-weight: 700;
-    font-size: 20px;
-    margin: 1.5%;
+.menu-item{
+    display: inline;
+    font-family: 'Special Elite', cursive;
+    font-size: 140%;
 }
 
-#btnSelect {
-    background-color: rgb(61, 60, 60);
-    color: white;
-    border-radius: 20px;
-    border: none;
-    font-size: 15px;
+.menu-item a:hover{
+    color: #175187
+}
+
+.menu-item a{
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+main{
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-aside-about{
+    display: flex;
+    align-items: baseline;
+}
+
+aside{
+    width: -webkit-fill-available;
+    display: flex;
+    flex-direction: column;
+}
+
+#about{
+    padding-left: 2%;
+}
+
+.main-tables-links{
+    width: -webkit-fill-available;
+}
+
+.other-contents-links{
+    list-style-type: circle;}
+
+.other-contents-links a{
+    text-decoration: none;
+    cursor: alias;
+    font-size: 140%;
 }
